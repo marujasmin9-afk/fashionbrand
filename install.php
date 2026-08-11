@@ -1,5 +1,5 @@
 <?php
-// Automated Installer script for AURA LUXE
+// Automated Installer script for BRAND FASHION
 $host = 'localhost';
 $username = 'root';
 $password = '';
@@ -29,7 +29,7 @@ if (isset($_POST['install']) || isset($_GET['auto'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA LUXE | Database Installer</title>
+    <title>BRAND FASHION | Database Installer</title>
    <link rel="stylesheet" href="assets/css/boostrap.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -77,7 +77,7 @@ if (isset($_POST['install']) || isset($_GET['auto'])) {
 </head>
 <body>
     <div class="luxury-card text-center">
-        <h1 class="gold-title mb-2">AURA LUXE</h1>
+        <h1 class="gold-title mb-2">BRAND FASHION</h1>
         <p class="text-secondary mb-4">Haute Couture & High Jewelry Installer</p>
 
         <?php if ($message): ?>

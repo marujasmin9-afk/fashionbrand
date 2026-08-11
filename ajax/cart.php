@@ -28,6 +28,12 @@ if ($action === 'add') {
         exit;
     }
 
+    // Stock check
+    if ($product['stock'] <= 0) {
+        echo json_encode(['status' => 'error', 'message' => 'Sorry, "' . htmlspecialchars($product['title']) . '" is currently Out of Stock.']);
+        exit;
+    }
+
     // Check existing item in cart
     if ($user_id) {
         $stmt = $pdo->prepare("SELECT * FROM cart WHERE user_id = ? AND product_id = ? AND color = ? AND size = ?");
@@ -38,6 +44,16 @@ if ($action === 'add') {
     }
 
     $existing = $stmt->fetch();
+    $requested_total_qty = $existing ? ($existing['quantity'] + $quantity) : $quantity;
+
+    // Check requested total quantity against stock
+    if ($requested_total_qty > $product['stock']) {
+        echo json_encode([
+            'status' => 'error', 
+            'message' => 'Only ' . $product['stock'] . ' unit(s) of "' . htmlspecialchars($product['title']) . '" available. You already have ' . ($existing ? $existing['quantity'] : 0) . ' in your bag.'
+        ]);
+        exit;
+    }
 
     if ($existing) {
         $new_qty = $existing['quantity'] + $quantity;
@@ -65,17 +81,45 @@ if ($action === 'update') {
         exit;
     }
 
+    // Get product stock via cart item
+    $stmt_stock = $pdo->prepare("SELECT c.id, p.title, p.stock 
+                                  FROM cart c 
+                                  JOIN products p ON c.product_id = p.id 
+                                  WHERE c.id = ?");
+    $stmt_stock->execute([$cart_id]);
+    $cart_product = $stmt_stock->fetch();
+
+    if (!$cart_product) {
+        echo json_encode(['status' => 'error', 'message' => 'Item not found in bag.']);
+        exit;
+    }
+
+    if ($cart_product['stock'] <= 0) {
+        echo json_encode(['status' => 'error', 'message' => '"' . htmlspecialchars($cart_product['title']) . '" is now Out of Stock.', 'cart_count' => get_cart_count()]);
+        exit;
+    }
+
+    // Cap quantity to available stock
+    $final_qty = $quantity;
+    $adjusted = false;
+    if ($quantity > $cart_product['stock']) {
+        $final_qty = $cart_product['stock'];
+        $adjusted = true;
+    }
+
     $stmt = $pdo->prepare("UPDATE cart SET quantity = ? WHERE id = ?");
-    $stmt->execute([$quantity, $cart_id]);
+    $stmt->execute([$final_qty, $cart_id]);
 
     echo json_encode([
-        'status' => 'success',
-        'message' => 'Cart updated.',
+        'status' => $adjusted ? 'warning' : 'success',
+        'message' => $adjusted 
+            ? 'Only ' . $cart_product['stock'] . ' unit(s) of "' . htmlspecialchars($cart_product['title']) . '" available. Quantity adjusted.' 
+            : 'Cart updated.',
+        'final_qty' => $final_qty,
         'cart_count' => get_cart_count()
     ]);
     exit;
 }
-
 if ($action === 'remove') {
     $cart_id = isset($_POST['cart_id']) ? (int)$_POST['cart_id'] : 0;
 

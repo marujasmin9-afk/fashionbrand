@@ -8,7 +8,7 @@ $settings = get_settings();
             <div class="col-lg-4 col-md-6">
                 <h3 class="navbar-brand text-white mb-3">AURA <span class="text-gold">LUXE</span></h3>
                 <p class="text-muted small mb-4">
-                    AURA LUXE is a premier international luxury maison bringing bespoke Haute Couture dresses, fine solitaire diamond jewelry, and handcrafted silk heritage wear to discerning collectors worldwide.
+                    BRAND FASHION is a premier international luxury maison bringing bespoke Haute Couture dresses, fine solitaire diamond jewelry, and handcrafted silk heritage wear to discerning collectors worldwide.
                 </p>
                 <h5 class="footer-title text-gold fs-6 mb-2">JOIN THE PRIVATE CLUB</h5>
                 <form action="index.php" method="POST" class="d-flex gap-2">
@@ -60,7 +60,7 @@ $settings = get_settings();
         <hr class="border-secondary my-5">
 
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-muted">
-            <p class="mb-2 mb-md-0">&copy; <?= date('Y') ?> AURA LUXE Maison. All Rights Reserved. Crafted for Haute Couture & Fine Jewelry.</p>
+            <p class="mb-2 mb-md-0">&copy; <?= date('Y') ?> BRAND FASHION Maison. All Rights Reserved. Crafted for Haute Couture & Fine Jewelry.</p>
             <div class="d-flex gap-3 fs-4 text-secondary">
                 <i class="fab fa-cc-visa"></i>
                 <i class="fab fa-cc-mastercard"></i>

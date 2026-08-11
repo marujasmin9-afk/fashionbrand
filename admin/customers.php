@@ -32,7 +32,7 @@ $customers = $pdo->query("SELECT u.*, COUNT(o.id) as total_orders, SUM(o.grand_t
                             <td><?= htmlspecialchars($c['phone'] ?: 'N/A') ?></td>
                             <td><span class="badge bg-secondary"><?= $c['total_orders'] ?> orders</span></td>
                             <td class="text-gold font-serif fw-bold"><?= format_price($c['total_spent'] ?: 0) ?></td>
-                            <td class="text-muted"><?= date('d M Y', strtotime($c['created_at'])) ?></td>
+                            <td class="text-gold"><?= date('d M Y', strtotime($c['created_at'])) ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

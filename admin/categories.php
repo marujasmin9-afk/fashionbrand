@@ -33,7 +33,7 @@ $categories = $pdo->query("SELECT * FROM categories ORDER BY id DESC")->fetchAll
     <!-- Form to Add Category -->
     <div class="col-md-4">
         <div class="card bg-dark border-secondary">
-            <div class="card-header bg-dark border-secondary text-gold font-serif">Add New Category</div>
+            <div class="card-header bg-dark border-secondary text-white font-serif">Add New Category</div>
             <div class="card-body">
                 <form method="POST">
                     <div class="mb-3">
@@ -65,7 +65,7 @@ $categories = $pdo->query("SELECT * FROM categories ORDER BY id DESC")->fetchAll
     <!-- Category List Table -->
     <div class="col-md-8">
         <div class="card bg-dark border-secondary">
-            <div class="card-header bg-dark border-secondary text-gold font-serif">Categories List</div>
+            <div class="card-header bg-dark border-secondary text-white font-serif">Categories List</div>
             <div class="card-body p-0">
                 <div class="table-responsive">
                     <table class="table table-dark table-hover align-middle border-secondary mb-0 small">
@@ -86,7 +86,7 @@ $categories = $pdo->query("SELECT * FROM categories ORDER BY id DESC")->fetchAll
                                     </td>
                                     <td class="fw-bold text-white"><?= htmlspecialchars($cat['name']) ?></td>
                                     <td><span class="badge bg-secondary"><?= strtoupper($cat['type']) ?></span></td>
-                                    <td class="text-muted"><?= htmlspecialchars($cat['slug']) ?></td>
+                                    <td class="text-white"><?= htmlspecialchars($cat['slug']) ?></td>
                                     <td>
                                         <a href="categories.php?delete=<?= $cat['id'] ?>" onclick="return confirm('Delete this category?')" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i> Delete</a>
                                     </td>

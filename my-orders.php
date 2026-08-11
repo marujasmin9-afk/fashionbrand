@@ -22,13 +22,13 @@ $orders = $stmt->fetchAll();
             <div class="col-lg-3">
                 <div class="glass-card p-4">
                     <h5 class="font-serif text-gold mb-3">Client Portal</h5>
-                    <ul class="nav flex-column gap-2 small">
-                        <li class="nav-item"><a href="dashboard.php" class="nav-link text-light px-0"><i class="fas fa-chart-line text-gold me-2"></i> Dashboard Overview</a></li>
-                        <li class="nav-item"><a href="my-orders.php" class="nav-link active text-gold px-0"><i class="fas fa-box me-2"></i> Order History</a></li>
-                        <li class="nav-item"><a href="wishlist.php" class="nav-link text-light px-0"><i class="fas fa-heart text-gold me-2"></i> Saved Wishlist</a></li>
-                        <li class="nav-item"><a href="profile.php" class="nav-link text-light px-0"><i class="fas fa-user-edit text-gold me-2"></i> Personal Profile</a></li>
-                        <li class="nav-item"><a href="change-password.php" class="nav-link text-light px-0"><i class="fas fa-lock text-gold me-2"></i> Security Credentials</a></li>
-                        <li class="nav-item border-top border-secondary pt-2"><a href="logout.php" class="nav-link text-danger px-0"><i class="fas fa-sign-out-alt me-2"></i> Logout</a></li>
+                   <ul class="nav flex-column gap-2 small">
+                        <li class="nav-item"><a href="dashboard.php" class="nav-link active text-gold px-0" style="color: #ffffff !important;"><i class="fas fa-chart-line me-2"></i> Dashboard Overview</a></li>
+                        <li class="nav-item"><a href="my-orders.php" class="nav-link text-light px-0" style="color: #ffffff !important;"><i class="fas fa-box text-gold me-2"></i> Order History</a></li>
+                        <li class="nav-item"><a href="wishlist.php" class="nav-link text-light px-0" style="color: #ffffff !important;"><i class="fas fa-heart text-gold me-2"></i> Saved Wishlist</a></li>
+                        <li class="nav-item"><a href="profile.php" class="nav-link text-light px-0" style="color: #ffffff !important;"><i class="fas fa-user-edit text-gold me-2"></i> Personal Profile</a></li>
+                       <li class="nav-item"><a href="change-password.php" class="nav-link text-light px-0" style="color: #ffffff !important;"><i class="fas fa-lock text-gold me-2"></i> Security Credentials</a></li>
+                       <li class="nav-item border-top border-secondary pt-2"><a href="logout.php" class="nav-link text-danger px-0" style="color: #ffffff !important;"><i class="fas fa-sign-out-alt me-2"></i> Logout</a></li>
                     </ul>
                 </div>
             </div>

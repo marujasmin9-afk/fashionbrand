@@ -1,5 +1,5 @@
 /* ==========================================================================
-   AURA LUXE - JavaScript & AJAX Logic
+   BRAND FASHION - JavaScript & AJAX Logic
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -204,6 +204,45 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
         }
+    });
+
+    // Cart Quantity Update & Remove Handler
+    document.querySelectorAll('.cart-qty-input').forEach(input => {
+        input.addEventListener('change', function () {
+            const cartId = this.getAttribute('data-id');
+            let qty = parseInt(this.value);
+            if (isNaN(qty) || qty < 1) qty = 1;
+            const formData = new FormData();
+            formData.append('action', 'update');
+            formData.append('cart_id', cartId);
+            formData.append('quantity', qty);
+            fetch('ajax/cart.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'error') {
+                    alert(data.message);
+                } else if (data.status === 'warning') {
+                    alert(data.message);
+                }
+                window.location.reload();
+            });
+        });
+    });
+
+    document.querySelectorAll('.cart-remove-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const cartId = this.getAttribute('data-id');
+            const formData = new FormData();
+            formData.append('action', 'remove');
+            formData.append('cart_id', cartId);
+            fetch('ajax/cart.php', {
+                method: 'POST',
+                body: formData
+            }).then(() => window.location.reload());
+        });
     });
 
     // Helper functions for badge updating & toast notifications

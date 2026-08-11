@@ -30,7 +30,7 @@ $coupons = $pdo->query("SELECT * FROM coupons ORDER BY id DESC")->fetchAll();
 <div class="row g-4">
     <div class="col-md-4">
         <div class="card bg-dark border-secondary">
-            <div class="card-header bg-dark border-secondary text-gold font-serif">Create VIP Coupon</div>
+            <div class="card-header bg-dark border-secondary text-white font-serif">Create VIP Coupon</div>
             <div class="card-body">
                 <form method="POST">
                     <div class="mb-3">
@@ -64,7 +64,7 @@ $coupons = $pdo->query("SELECT * FROM coupons ORDER BY id DESC")->fetchAll();
 
     <div class="col-md-8">
         <div class="card bg-dark border-secondary">
-            <div class="card-header bg-dark border-secondary text-gold font-serif">Active Promo Coupons</div>
+            <div class="card-header bg-dark border-secondary text-white font-serif">Active Promo Coupons</div>
             <div class="card-body p-0">
                 <div class="table-responsive">
                     <table class="table table-dark table-hover align-middle border-secondary mb-0 small">
@@ -83,7 +83,7 @@ $coupons = $pdo->query("SELECT * FROM coupons ORDER BY id DESC")->fetchAll();
                                     <td class="fw-bold text-gold"><?= htmlspecialchars($cp['code']) ?></td>
                                     <td><?= $cp['type'] === 'percentage' ? $cp['value'] . '%' : format_price($cp['value']) ?></td>
                                     <td><?= format_price($cp['min_order_amount']) ?></td>
-                                    <td class="text-muted"><?= date('d M Y', strtotime($cp['expiry_date'])) ?></td>
+                                    <td class="text-light"><?= date('d M Y', strtotime($cp['expiry_date'])) ?></td>
                                     <td>
                                         <a href="coupons.php?delete=<?= $cp['id'] ?>" onclick="return confirm('Delete coupon?')" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i> Delete</a>
                                     </td>

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 $page_title = "Boutique Checkout";
 include __DIR__ . '/includes/header.php';
 include __DIR__ . '/includes/topbar.php';

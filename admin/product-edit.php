@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include __DIR__ . '/includes/admin_header.php';
 
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;

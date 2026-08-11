@@ -38,7 +38,7 @@ $jewelry_items = $pdo->query("SELECT p.*, c.name as category_name
                                 <strong class="text-white d-block"><?= htmlspecialchars($j['title']) ?></strong>
                                 <small class="text-muted"><?= htmlspecialchars($j['sku']) ?></small>
                             </td>
-                            <td><span class="badge bg-gold text-dark"><?= htmlspecialchars($j['material'] ?: 'Gemstone') ?></span></td>
+                            <td><span class="badge bg-gold text-white"><?= htmlspecialchars($j['material'] ?: 'Gemstone') ?></span></td>
                             <td><span class="badge bg-secondary"><?= htmlspecialchars($j['jewelry_type'] ?: 'Jewel') ?></span></td>
                             <td class="text-gold font-serif fw-bold"><?= format_price($j['discount_price'] ?: $j['price']) ?></td>
                             <td><span class="badge bg-dark border border-secondary text-white"><?= $j['stock'] ?> left</span></td>

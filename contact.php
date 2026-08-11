@@ -31,13 +31,13 @@ if (isset($_POST['send_message'])) {
             <div class="col-lg-5" data-aos="fade-right">
                 <div class="glass-card p-4">
                     <h4 class="font-serif text-gold mb-4">Flagship Salon</h4>
-                    <p class="text-light small mb-3"><i class="fas fa-map-marker-alt text-gold me-3 fs-5"></i> 740 Fifth Avenue, New York, NY 10019</p>
-                    <p class="text-light small mb-3"><i class="fas fa-phone-alt text-gold me-3 fs-5"></i> Concierge: +1 (800) 888-AURA</p>
-                    <p class="text-light small mb-4"><i class="fas fa-envelope text-gold me-3 fs-5"></i> concierge@auraluxe.com</p>
+                    <p class="text-light small mb-3"><i class="fas fa-map-marker-alt text-gold me-3 fs-5"></i> Junagadh</p>
+                    <p class="text-light small mb-3"><i class="fas fa-phone-alt text-gold me-3 fs-5"></i> Concierge: +91 9924927974</p>
+                    <p class="text-light small mb-4"><i class="fas fa-envelope text-gold me-3 fs-5"></i> jasminmaru09@gmail.com</p>
 
                     <hr class="border-secondary mb-4">
 
-                    <h5 class="font-serif text-white fs-6 mb-2">Salon Hours</h5>
+                    <h5 class="font-serif text-white fs-6 mb-2">Hours</h5>
                     <p class="text-muted small mb-1">Monday - Saturday: 10:00 AM - 8:00 PM EST</p>
                     <p class="text-muted small">Sunday: By Private VIP Appointment Only</p>
                 </div>

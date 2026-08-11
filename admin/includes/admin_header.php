@@ -13,9 +13,9 @@ $page_name = basename($_SERVER['PHP_SELF']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA LUXE | Admin Management Console</title>
+    <title>BRAND FASHION | Admin Management Console</title>
     
-   <link rel="stylesheet" href="assets/css/boostrap.css">
+   <link rel="stylesheet" href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -49,10 +49,6 @@ $page_name = basename($_SERVER['PHP_SELF']);
             <a href="coupons.php" class="admin-nav-link <?= $page_name == 'coupons.php' ? 'active' : '' ?>"><i class="fas fa-ticket-alt"></i> Coupons</a>
             <a href="banners.php" class="admin-nav-link <?= $page_name == 'banners.php' ? 'active' : '' ?>"><i class="fas fa-images"></i> Sliders & Banners</a>
             <a href="blogs.php" class="admin-nav-link <?= $page_name == 'blogs.php' ? 'active' : '' ?>"><i class="fas fa-blog"></i> Blogs</a>
-            <a href="testimonials.php" class="admin-nav-link <?= $page_name == 'testimonials.php' ? 'active' : '' ?>"><i class="fas fa-star"></i> Testimonials</a>
-            <a href="newsletter.php" class="admin-nav-link <?= $page_name == 'newsletter.php' ? 'active' : '' ?>"><i class="fas fa-envelope"></i> Newsletter</a>
-            <a href="settings.php" class="admin-nav-link <?= $page_name == 'settings.php' ? 'active' : '' ?>"><i class="fas fa-cog"></i> Settings</a>
-            
             <div class="border-top border-secondary mt-3 pt-3">
                 <a href="../index.php" target="_blank" class="admin-nav-link"><i class="fas fa-external-link-alt"></i> View Main Site</a>
                 <a href="logout.php" class="admin-nav-link text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a>
@@ -65,7 +61,7 @@ $page_name = basename($_SERVER['PHP_SELF']);
         <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom border-secondary">
             <div>
                 <h4 class="font-serif text-white mb-0">Concierge Administration</h4>
-                <small class="text-muted">Welcome back, <?= htmlspecialchars($_SESSION['admin_name']) ?></small>
+                <small class="text-white">Welcome back, <?= htmlspecialchars($_SESSION['admin_name']) ?></small>
             </div>
             <a href="logout.php" class="btn btn-outline-danger btn-sm"><i class="fas fa-power-off"></i> Logout</a>
         </div>

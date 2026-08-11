@@ -1,4 +1,5 @@
 <?php
+    ob_start();
 $page_title = "Shopping Bag";
 include __DIR__ . '/includes/header.php';
 include __DIR__ . '/includes/topbar.php';
@@ -205,39 +206,5 @@ $flash = get_flash_message();
         <?php endif; ?>
     </div>
 </section>
-
-<script>
-document.querySelectorAll('.cart-qty-input').forEach(input => {
-    input.addEventListener('change', function () {
-        const cartId = this.getAttribute('data-id');
-        const qty = this.value;
-
-        const formData = new FormData();
-        formData.append('action', 'update');
-        formData.append('cart_id', cartId);
-        formData.append('quantity', qty);
-
-        fetch('ajax/cart.php', {
-            method: 'POST',
-            body: formData
-        }).then(() => window.location.reload());
-    });
-});
-
-document.querySelectorAll('.cart-remove-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
-        const cartId = this.getAttribute('data-id');
-
-        const formData = new FormData();
-        formData.append('action', 'remove');
-        formData.append('cart_id', cartId);
-
-        fetch('ajax/cart.php', {
-            method: 'POST',
-            body: formData
-        }).then(() => window.location.reload());
-    });
-});
-</script>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>

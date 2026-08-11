@@ -42,7 +42,7 @@ $wishlist_count = get_wishlist_count();
                 <!-- Right Actions: Search, Wishlist, Cart, Theme Toggle -->
                 <div class="d-flex align-items-center gap-3">
                     <!-- Live Search Bar -->
-                    <div class="position-relative d-none d-xl-block" style="width: 220px;">
+                    <div class="position-relative  d-xl-block" style="width: 220px;">
                         <input type="text" id="search-input" class="form-control form-control-luxury text-white rounded-pill px-3 py-1 small" placeholder="Search luxury..." autocomplete="off">
                         <i class="fas fa-search position-absolute top-50 end-0 translate-middle-y me-3 text-gold extra-small"></i>
                         <div id="search-results-dropdown" class="position-absolute start-0 end-0 top-100 mt-2 z-3" style="display: none;"></div>

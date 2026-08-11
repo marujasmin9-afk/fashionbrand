@@ -16,7 +16,7 @@ include __DIR__ . '/includes/navbar.php';
     <div class="container" style="max-width: 850px;">
         <div class="glass-card p-5 text-light small lh-lg">
             <h4 class="font-serif text-gold mb-3">Authenticity & Ownership</h4>
-            <p class="mb-4">All Haute Couture garments and certified high jewelry displayed on AURA LUXE are proprietary designs of Maison AURA or licensed international partners.</p>
+            <p class="mb-4">All Haute Couture garments and certified high jewelry displayed on BRAND FASHION are proprietary designs of Maison AURA or licensed international partners.</p>
             <h5 class="font-serif text-white mb-2">Bespoke Orders</h5>
             <p class="mb-4">Custom solitaire orders and made-to-measure evening gowns require confirmation of measurements before final dispatch.</p>
         </div>

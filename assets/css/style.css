@@ -1,5 +1,5 @@
 /* ==========================================================================
-   AURA LUXE - Fashion & Jewellery Styling
+   BRAND FASHION - Fashion & Jewellery Styling
    Theme: Black & White E-commerce — "Our Stores" Layout Style
    (Header text forced to solid black)
    ========================================================================== */
@@ -228,7 +228,7 @@ h6,
 
 .btn-outline-gold {
     border: 1px solid var(--accent);
-    color: var(--accent) !important;
+    color: #bcbcbc !important;
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -241,8 +241,8 @@ h6,
 }
 
 .btn-outline-gold:hover {
-    background: var(--accent);
-    color: #FFFFFF !important;
+    background: #999;
+    color: var(--accent) !important;
     box-shadow: var(--shadow-accent);
     transform: translateY(-2px);
 }
@@ -608,7 +608,7 @@ h6,
 .form-control-luxury {
     background: var(--accent-light);
     border: 1px solid var(--glass-border);
-    color: var(--text-primary) !important;
+    color: #101010 !important;
     border-radius: 6px;
     padding: 12px 20px;
     font-size: 0.9rem;
@@ -631,7 +631,7 @@ h6,
 .luxury-toast {
     background: #FFFFFF;
     border: 1px solid var(--glass-border);
-    color: var(--text-primary);
+    color: #111;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }

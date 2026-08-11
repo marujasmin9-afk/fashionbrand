@@ -11,7 +11,7 @@ if (isset($_POST['subscribe_newsletter'])) {
         try {
             $stmt = $pdo->prepare("INSERT INTO newsletter (email) VALUES (?)");
             $stmt->execute([$email]);
-            set_flash_message('success', 'Thank you for joining the AURA LUXE VIP Concierge list.');
+            set_flash_message('success', 'Thank you for joining the BRAND FASHION VIP Concierge list.');
         } catch (PDOException $e) {
             set_flash_message('info', 'You are already registered on our VIP list.');
         }

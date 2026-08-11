@@ -8,7 +8,7 @@ include __DIR__ . '/includes/navbar.php';
 <section class="py-5 bg-dark border-bottom border-secondary text-center">
     <div class="container" data-aos="fade-up">
         <span class="sub-title">Maison Heritage</span>
-        <h1 class="font-serif text-white gold-gradient-text display-4">The Story of AURA LUXE</h1>
+        <h1 class="font-serif text-white gold-gradient-text display-4">The Story of BRAND FASHION</h1>
         <p class="text-muted small">Crafting haute couture gowns and fine solitaire jewelry for royalty and private collectors worldwide.</p>
     </div>
 </section>
@@ -25,10 +25,10 @@ include __DIR__ . '/includes/navbar.php';
                 <span class="sub-title">Atelier Heritage</span>
                 <h2 class="font-serif text-white fs-1 mb-3">Unrivaled Artistry & Pure Elegance</h2>
                 <p class="text-secondary small lh-lg mb-3">
-                    Founded in Paris and operating across luxury capitals worldwide, AURA LUXE embodies the pinnacle of high fashion and bespoke gemology. Each piece in our boutique is individually handcrafted by master artisans who have spent decades perfecting French embroidery and Solitaire setting.
+                    Founded in Paris and operating across luxury capitals worldwide, BRAND FASHION embodies the pinnacle of high fashion and bespoke gemology. Each piece in our boutique is individually handcrafted by master artisans who have spent decades perfecting French embroidery and Solitaire setting.
                 </p>
                 <p class="text-secondary small lh-lg mb-4">
-                    From rare VVS1 Columbian emeralds to hand-spun Banarasi silk sarees, AURA LUXE is dedicated to serving collectors who settle for nothing less than perfection.
+                    From rare VVS1 Columbian emeralds to hand-spun Banarasi silk sarees, BRAND FASHION is dedicated to serving collectors who settle for nothing less than perfection.
                 </p>
                 <a href="shop.php" class="btn btn-gold text-uppercase">Explore Private Catalog</a>
             </div>

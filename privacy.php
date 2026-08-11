@@ -16,7 +16,7 @@ include __DIR__ . '/includes/navbar.php';
     <div class="container" style="max-width: 850px;">
         <div class="glass-card p-5 text-light small lh-lg">
             <h4 class="font-serif text-gold mb-3">Client Confidentiality</h4>
-            <p class="mb-4">At AURA LUXE, protecting our collectors' personal details is paramount. We enforce strict encryption protocols for all client records and transaction data.</p>
+            <p class="mb-4">At BRAND FASHION, protecting our collectors' personal details is paramount. We enforce strict encryption protocols for all client records and transaction data.</p>
             <h5 class="font-serif text-white mb-2">Data Collection</h5>
             <p class="mb-4">We collect necessary shipping address and email information strictly to fulfill orders and provide tailored concierge communications.</p>
         </div>

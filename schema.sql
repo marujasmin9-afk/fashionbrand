@@ -272,8 +272,8 @@ CREATE TABLE IF NOT EXISTS `contact_messages` (
 -- 21. Settings Table
 CREATE TABLE IF NOT EXISTS `settings` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
-  `site_name` VARCHAR(150) DEFAULT 'AURA LUXE',
-  `site_title` VARCHAR(255) DEFAULT 'AURA LUXE | High Fashion & Fine Jewelry',
+  `site_name` VARCHAR(150) DEFAULT 'BRAND FASHION',
+  `site_title` VARCHAR(255) DEFAULT 'BRAND FASHION | High Fashion & Fine Jewelry',
   `site_logo` VARCHAR(255) DEFAULT NULL,
   `favicon` VARCHAR(255) DEFAULT NULL,
   `contact_email` VARCHAR(150) DEFAULT 'concierge@auraluxe.com',
@@ -313,7 +313,7 @@ INSERT INTO `admins` (`name`, `email`, `password`, `role`) VALUES
 
 -- Store Settings Initial Entry
 INSERT INTO `settings` (`id`, `site_name`, `site_title`, `contact_email`, `contact_phone`, `currency`, `tax_rate`, `shipping_fee`) VALUES
-(1, 'AURA LUXE', 'AURA LUXE | Haute Couture & High Jewelry', 'concierge@auraluxe.com', '+1 (800) 888-AURA', '$', 18.00, 25.00);
+(1, 'BRAND FASHION', 'BRAND FASHION | Haute Couture & High Jewelry', 'concierge@auraluxe.com', '+1 (800) 888-AURA', '$', 18.00, 25.00);
 
 -- Categories
 INSERT INTO `categories` (`id`, `name`, `slug`, `type`, `image`, `description`, `is_featured`) VALUES
@@ -380,7 +380,7 @@ INSERT INTO `banners` (`title`, `subtitle`, `image`, `link`, `position`) VALUES
 
 -- Testimonials Seed
 INSERT INTO `testimonials` (`name`, `role`, `avatar`, `review`, `rating`) VALUES
-('Lady Eleanor Vance', 'Haute Couture Collector', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80', 'AURA LUXE provides unparalleled quality. The emerald cascade necklace arrived in immaculate custom packaging.', 5),
+('Lady Eleanor Vance', 'Haute Couture Collector', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80', 'BRAND FASHION provides unparalleled quality. The emerald cascade necklace arrived in immaculate custom packaging.', 5),
 ('Sophia Sterling', 'Fashion Director', 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&q=80', 'The velvet evening gown fit perfectly right out of the box. Truly a Dior level luxury experience.', 5);
 
 -- Blogs Seed

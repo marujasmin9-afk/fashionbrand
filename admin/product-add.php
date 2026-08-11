@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include __DIR__ . '/includes/admin_header.php';
 
 $categories = $pdo->query("SELECT * FROM categories ORDER BY name ASC")->fetchAll();
@@ -25,17 +26,27 @@ if (isset($_POST['save_product'])) {
     $is_best_seller = isset($_POST['is_best_seller']) ? 1 : 0;
     $is_flash_sale = isset($_POST['is_flash_sale']) ? 1 : 0;
 
-    try {
-        $stmt = $pdo->prepare("INSERT INTO products (title, slug, sku, category_id, brand_id, price, discount_price, stock, main_image, short_description, description, color, size, material, jewelry_type, is_new, is_best_seller, is_flash_sale) 
-                               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute([
-            $title, $slug, $sku, $category_id, $brand_id, $price, $discount_price, $stock, $main_image, $short_desc, $description, $color, $size, $material, $jewelry_type, $is_new, $is_best_seller, $is_flash_sale
-        ]);
-        header("Location: products.php");
-        exit;
-    } catch (PDOException $e) {
+try {
+    $stmt = $pdo->prepare("INSERT INTO products (title, slug, sku, category_id, brand_id, price, discount_price, stock, main_image, short_description, description, color, size, material, jewelry_type, is_new, is_best_seller, is_flash_sale) 
+                           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->execute([
+        $title, $slug, $sku, $category_id, $brand_id, $price, $discount_price, $stock, $main_image, $short_desc, $description, $color, $size, $material, $jewelry_type, $is_new, $is_best_seller, $is_flash_sale
+    ]);
+    header("Location: products.php");
+    exit;
+} catch (PDOException $e) {
+    if ($e->errorInfo[1] == 1062) {
+        if (strpos($e->getMessage(), "'sku'") !== false) {
+            $message = "This SKU (\"$sku\") already exists. Please use a different SKU.";
+        } elseif (strpos($e->getMessage(), "'slug'") !== false) {
+            $message = "This URL Slug already exists. Please choose a different title or custom slug.";
+        } else {
+            $message = "This entry already exists. Please check your inputs.";
+        }
+    } else {
         $message = "Error adding product: " . $e->getMessage();
     }
+  }
 }
 ?>
 
@@ -58,9 +69,10 @@ if (isset($_POST['save_product'])) {
                 </div>
 
                 <div class="col-md-3">
-                    <label class="form-label text-light small">SKU *</label>
-                    <input type="text" name="sku" class="form-control bg-dark text-white border-secondary small" required placeholder="SKU-JWL-999">
-                </div>
+    <label class="form-label text-light small">SKU *</label>
+    <input type="text" name="sku" class="form-control bg-dark text-white border-secondary small" required 
+           value="<?= 'SKU-JWL-' . str_pad($pdo->query("SELECT COUNT(*) FROM products")->fetchColumn() + 1, 3, '0', STR_PAD_LEFT) ?>">
+</div>
 
                 <div class="col-md-3">
                     <label class="form-label text-light small">URL Slug (Optional)</label>

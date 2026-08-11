@@ -21,7 +21,7 @@ $blogs = $pdo->query("SELECT * FROM blogs ORDER BY id DESC")->fetchAll();
 <div class="row g-4">
     <div class="col-md-4">
         <div class="card bg-dark border-secondary">
-            <div class="card-header bg-dark border-secondary text-gold font-serif">Write Blog Article</div>
+            <div class="card-header bg-dark border-secondary text-light font-serif">Write Blog Article</div>
             <div class="card-body">
                 <form method="POST">
                     <div class="mb-3">
@@ -48,7 +48,7 @@ $blogs = $pdo->query("SELECT * FROM blogs ORDER BY id DESC")->fetchAll();
 
     <div class="col-md-8">
         <div class="card bg-dark border-secondary">
-            <div class="card-header bg-dark border-secondary text-gold font-serif">Published Journal Posts</div>
+            <div class="card-header bg-dark border-secondary text-white font-serif">Published Journal Posts</div>
             <div class="card-body p-0">
                 <div class="table-responsive">
                     <table class="table table-dark table-hover align-middle border-secondary mb-0 small">
@@ -66,7 +66,7 @@ $blogs = $pdo->query("SELECT * FROM blogs ORDER BY id DESC")->fetchAll();
                                     <td><img src="<?= htmlspecialchars($b['image']) ?>" width="60" height="40" class="rounded object-fit-cover"></td>
                                     <td class="fw-bold text-white"><?= htmlspecialchars($b['title']) ?></td>
                                     <td><span class="badge bg-secondary"><?= htmlspecialchars($b['category']) ?></span></td>
-                                    <td class="text-muted"><?= date('d M Y', strtotime($b['created_at'])) ?></td>
+                                    <td class="text-white"><?= date('d M Y', strtotime($b['created_at'])) ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

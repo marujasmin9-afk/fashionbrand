@@ -34,12 +34,12 @@ $orders = $stmt->fetchAll();
     
     <!-- Status Filter Buttons -->
     <div class="btn-group btn-group-sm">
-        <a href="orders.php" class="btn <?= empty($status_filter) ? 'btn-gold' : 'btn-outline-gold' ?>">All</a>
-        <a href="orders.php?status=pending" class="btn <?= $status_filter == 'pending' ? 'btn-gold' : 'btn-outline-gold' ?>">Pending</a>
-        <a href="orders.php?status=confirmed" class="btn <?= $status_filter == 'confirmed' ? 'btn-gold' : 'btn-outline-gold' ?>">Confirmed</a>
-        <a href="orders.php?status=packed" class="btn <?= $status_filter == 'packed' ? 'btn-gold' : 'btn-outline-gold' ?>">Packed</a>
-        <a href="orders.php?status=shipped" class="btn <?= $status_filter == 'shipped' ? 'btn-gold' : 'btn-outline-gold' ?>">Shipped</a>
-        <a href="orders.php?status=delivered" class="btn <?= $status_filter == 'delivered' ? 'btn-gold' : 'btn-outline-gold' ?>">Delivered</a>
+    <a href="orders.php" class="btn <?= empty($status_filter) ? 'btn-gold' : 'btn-outline-gold' ?>" style="color:#fff !important;">All</a>
+        <a href="orders.php?status=pending" class="btn <?= $status_filter == 'pending' ? 'btn-gold' : 'btn-outline-gold' ?>" style="color:#fff !important;">Pending</a>
+        <a href="orders.php?status=confirmed" class="btn <?= $status_filter == 'confirmed' ? 'btn-gold' : 'btn-outline-gold' ?>"style="color:#fff !important;">Confirmed</a>
+        <a href="orders.php?status=packed" class="btn <?= $status_filter == 'packed' ? 'btn-gold' : 'btn-outline-gold' ?>"style="color:#fff !important;">Packed</a>
+        <a href="orders.php?status=shipped" class="btn <?= $status_filter == 'shipped' ? 'btn-gold' : 'btn-outline-gold' ?>"style="color:#fff !important;">Shipped</a>
+        <a href="orders.php?status=delivered" class="btn <?= $status_filter == 'delivered' ? 'btn-gold' : 'btn-outline-gold' ?>"style="color:#fff !important;">Delivered</a>
     </div>
 </div>
 
@@ -66,7 +66,7 @@ $orders = $stmt->fetchAll();
                                 <div><?= htmlspecialchars($ord['customer_name'] ?: 'Guest') ?></div>
                                 <small class="text-muted"><?= htmlspecialchars($ord['customer_email']) ?></small>
                             </td>
-                            <td class="text-muted"><?= date('d M Y, h:i A', strtotime($ord['created_at'])) ?></td>
+                            <td class="text-white"><?= date('d M Y, h:i A', strtotime($ord['created_at'])) ?></td>
                             <td class="text-gold font-serif fw-bold"><?= format_price($ord['grand_total']) ?></td>
                             <td><span class="badge bg-secondary"><?= strtoupper($ord['payment_method']) ?></span></td>
                             <td>

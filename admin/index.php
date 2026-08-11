@@ -20,25 +20,25 @@ $recent_orders = $pdo->query("SELECT o.*, u.name as customer_name FROM orders o 
 <div class="row g-3 mb-4">
     <div class="col-md-3">
         <div class="stat-card">
-            <span class="text-muted small text-uppercase">Today's Orders</span>
+            <span class="text-muted small text-uppercase" style="color: #fff !important;">Today's Orders</span>
             <div class="stat-value"><?= $todays_orders ?></div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="stat-card">
-            <span class="text-muted small text-uppercase">Monthly Revenue</span>
+            <span class="text-muted small text-uppercase" style="color: #fff !important;">Monthly Revenue</span>
             <div class="stat-value"><?= format_price($monthly_sales) ?></div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="stat-card">
-            <span class="text-muted small text-uppercase">Total Revenue</span>
+            <span class="text-muted small text-uppercase" style="color: #fff !important;">Total Revenue</span>
             <div class="stat-value"><?= format_price($total_revenue) ?></div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="stat-card">
-            <span class="text-muted small text-uppercase">Registered Collectors</span>
+            <span class="text-muted small text-uppercase" style="color: #fff !important;">Registered Collectors</span>
             <div class="stat-value"><?= $total_customers ?></div>
         </div>
     </div>
@@ -97,7 +97,7 @@ $recent_orders = $pdo->query("SELECT o.*, u.name as customer_name FROM orders o 
                             <td><?= htmlspecialchars($ord['customer_name'] ?: 'Guest Collector') ?></td>
                             <td class="text-gold font-serif"><?= format_price($ord['grand_total']) ?></td>
                             <td><span class="badge bg-secondary"><?= strtoupper($ord['payment_method']) ?></span></td>
-                            <td><span class="badge bg-gold text-dark"><?= strtoupper($ord['order_status']) ?></span></td>
+                            <td><span class="badge bg-gold text-light"><?= strtoupper($ord['order_status']) ?></span></td>
                             <td>
                                 <a href="order-details.php?id=<?= $ord['id'] ?>" class="btn btn-sm btn-outline-light">Manage</a>
                             </td>

@@ -29,20 +29,20 @@ $shipping = json_decode($order['shipping_address'], true);
 <div class="row g-4 mb-4">
     <div class="col-md-6">
         <div class="card bg-dark border-secondary p-3">
-            <h5 class="font-serif text-gold mb-3">Shipping Address</h5>
+            <h5 class="font-serif text-white mb-3">Shipping Address</h5>
             <p class="text-white small mb-1"><strong><?= htmlspecialchars($shipping['full_name']) ?></strong></p>
-            <p class="text-muted small mb-1"><?= htmlspecialchars($shipping['address_line1']) ?>, <?= htmlspecialchars($shipping['address_line2']) ?></p>
-            <p class="text-muted small mb-1"><?= htmlspecialchars($shipping['city']) ?>, <?= htmlspecialchars($shipping['state']) ?> - <?= htmlspecialchars($shipping['pincode']) ?></p>
-            <p class="text-muted small mb-0">Phone: <?= htmlspecialchars($shipping['phone']) ?></p>
+            <p class="text-white small mb-1"><?= htmlspecialchars($shipping['address_line1']) ?>, <?= htmlspecialchars($shipping['address_line2']) ?></p>
+            <p class="text-white small mb-1"><?= htmlspecialchars($shipping['city']) ?>, <?= htmlspecialchars($shipping['state']) ?> - <?= htmlspecialchars($shipping['pincode']) ?></p>
+            <p class="text-white small mb-0">Phone: <?= htmlspecialchars($shipping['phone']) ?></p>
         </div>
     </div>
 
     <div class="col-md-6">
         <div class="card bg-dark border-secondary p-3">
-            <h5 class="font-serif text-gold mb-3">Order Information</h5>
+            <h5 class="font-serif text-white mb-3">Order Information</h5>
             <p class="text-white small mb-1">Placed On: <strong><?= date('d M Y, h:i A', strtotime($order['created_at'])) ?></strong></p>
             <p class="text-white small mb-1">Payment Method: <strong><?= strtoupper($order['payment_method']) ?></strong></p>
-            <p class="text-white small mb-0">Current Status: <span class="badge bg-gold text-dark"><?= strtoupper($order['order_status']) ?></span></p>
+            <p class="text-white small mb-0">Current Status: <span class="badge bg-white text-dark"><?= strtoupper($order['order_status']) ?></span></p>
         </div>
     </div>
 </div>

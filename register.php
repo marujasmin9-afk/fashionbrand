@@ -10,11 +10,10 @@ if (is_logged_in()) {
 
 $error = '';
 if (isset($_POST['register'])) {
-    $name = sanitize($_POST['name']);
-    $email = sanitize($_POST['email']);
-    $phone = sanitize($_POST['phone']);
-    $password = $_POST['password'];
-
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $phone = trim($_POST['phone']);
+    $password = trim($_POST['password']); // Plain Password
     if (empty($name) || empty($email) || empty($password)) {
         $error = 'Please fill out all mandatory fields.';
     } else {
@@ -24,9 +23,15 @@ if (isset($_POST['register'])) {
         if ($stmt_c->fetch()) {
             $error = 'An account with this email already exists.';
         } else {
-            $hashed = password_hash($password, PASSWORD_DEFAULT);
-            $stmt_in = $pdo->prepare("INSERT INTO users (name, email, phone, password) VALUES (?, ?, ?, ?)");
-            $stmt_in->execute([$name, $email, $phone, $hashed]);
+            // Plain Password Save
+            $stmt = $pdo->prepare("INSERT INTO users (name, email, phone, password) VALUES (?, ?, ?, ?)");
+            $stmt->execute([
+                $name,
+                $email,
+                $phone,
+                $password
+            ]);
+
             $new_id = $pdo->lastInsertId();
 
             $_SESSION['user_id'] = $new_id;
@@ -46,7 +51,7 @@ if (isset($_POST['register'])) {
             <div class="text-center mb-4">
                 <span class="sub-title">VIP Membership</span>
                 <h2 class="font-serif text-white fs-1 gold-gradient-text">Register Account</h2>
-                <p class="text-muted small">Join AURA LUXE for personalized concierge services and private previews.</p>
+                <p class="text-muted small">Join BRAND FASHION for personalized concierge services and private previews.</p>
             </div>
 
             <?php if ($error): ?>

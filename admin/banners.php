@@ -29,7 +29,7 @@ $sliders = $pdo->query("SELECT * FROM sliders ORDER BY id DESC")->fetchAll();
 <div class="row g-4">
     <div class="col-md-4">
         <div class="card bg-dark border-secondary">
-            <div class="card-header bg-dark border-secondary text-gold font-serif">Add Hero Slider</div>
+            <div class="card-header bg-dark border-secondary text-light font-serif">Add Hero Slider</div>
             <div class="card-body">
                 <form method="POST">
                     <div class="mb-3">
@@ -56,7 +56,7 @@ $sliders = $pdo->query("SELECT * FROM sliders ORDER BY id DESC")->fetchAll();
 
     <div class="col-md-8">
         <div class="card bg-dark border-secondary">
-            <div class="card-header bg-dark border-secondary text-gold font-serif">Current Hero Sliders</div>
+            <div class="card-header bg-dark border-secondary text-light font-serif">Current Hero Sliders</div>
             <div class="card-body p-0">
                 <div class="table-responsive">
                     <table class="table table-dark table-hover align-middle border-secondary mb-0 small">
@@ -73,7 +73,7 @@ $sliders = $pdo->query("SELECT * FROM sliders ORDER BY id DESC")->fetchAll();
                                 <tr>
                                     <td><img src="<?= htmlspecialchars($s['image']) ?>" width="70" height="40" class="rounded object-fit-cover"></td>
                                     <td class="fw-bold text-white"><?= htmlspecialchars($s['title']) ?></td>
-                                    <td class="text-muted"><?= htmlspecialchars($s['button_link']) ?></td>
+                                    <td class="text-white"><?= htmlspecialchars($s['button_link']) ?></td>
                                     <td>
                                         <a href="banners.php?del_slider=<?= $s['id'] ?>" onclick="return confirm('Delete slide?')" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i> Delete</a>
                                     </td>
